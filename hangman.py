@@ -11,14 +11,12 @@ pictures = []
 def getSecretWord():
 
     global secret_word
-    
-    found_match = 'false'
 
-    while found_match == 'false':
+    while True:
     
-        word = input("Please enter the secret word: ")
+        word = input("Please enter the secret word: ").strip()
 
-        match = re.match('[a-zA-Z_]+', word)
+        match = re.match('^[a-zA-Z_]+$', word)
 
         if match:
             secret_word = word
